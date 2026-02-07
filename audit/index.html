@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The $20M Funnel Audit Playbook | Marisha Lakhiani</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>The Leaky Funnel Audit | Marisha Lakhiani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,37 +13,22 @@
         }
 
         :root {
-            --cream: #f8f6f3;
-            --cream-dark: #f3f0eb;
-            --white: #ffffff;
-            --black: #0a0a0a;
             --bordeaux: #8b2543;
-            --bordeaux-light: #a13558;
-            --bordeaux-dark: #6b1d34;
-            --gold: #d4a574;
-            --gray-100: #f5f5f5;
-            --gray-200: #e5e5e5;
-            --gray-600: #666666;
+            --bordeaux-dark: #6a1c33;
+            --cream: #faf8f5;
+            --cream-dark: #f5f0e8;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6a6a6a;
+            --gold: #c9a55c;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
-            color: var(--black);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Bodoni Moda', serif;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 32px;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 17px;
         }
 
         /* Navigation */
@@ -52,15 +37,15 @@
             top: 0;
             left: 0;
             right: 0;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
             z-index: 1000;
-            background: rgba(248, 246, 243, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 20px 32px;
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid rgba(139, 37, 67, 0.1);
         }
 
         .nav-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -68,865 +53,1135 @@
         }
 
         .logo {
-            font-family: 'Bodoni Moda', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
+            font-weight: 600;
             color: var(--bordeaux);
+            letter-spacing: 2px;
+        }
+
+        .nav-cta {
+            background: var(--bordeaux);
+            color: white;
+            padding: 12px 24px;
             text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: var(--bordeaux-dark);
         }
 
         /* Hero Section */
         .hero {
-            text-align: left;
-            margin-top: 100px;
-            margin-bottom: 80px;
+            padding: 160px 40px 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-            color: var(--black);
-        }
-
-        .hero .subtitle {
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--gray-600);
-            margin-bottom: 48px;
-            line-height: 1.4;
-        }
-
-        /* Story Section */
-        .story-section {
-            margin-bottom: 80px;
-        }
-
-        .story-section h2 {
-            font-size: 38px;
+        .hero-label {
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
-            color: var(--black);
-        }
-
-        .story-section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--black);
-            margin-bottom: 24px;
-        }
-
-        .highlight {
-            font-weight: 600;
+            letter-spacing: 3px;
             color: var(--bordeaux);
-        }
-
-        /* Stat Box */
-        .stat-box {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 48px;
-            margin: 48px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .stat-box h3 {
-            font-size: 28px;
-            font-weight: 600;
             margin-bottom: 24px;
-            color: var(--black);
+            text-transform: uppercase;
         }
 
-        .stat-list {
-            list-style: none;
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: var(--text-dark);
         }
 
-        .stat-list li {
-            font-size: 18px;
-            color: var(--black);
-            margin-bottom: 20px;
-            padding-left: 36px;
-            position: relative;
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto 20px;
             line-height: 1.6;
         }
 
-        .stat-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--bordeaux);
-            font-weight: 700;
-            font-size: 22px;
+        .hero-hook {
+            font-size: 19px;
+            color: var(--text-dark);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            font-weight: 500;
         }
 
-        /* Result Callout */
-        .result-callout {
-            background: linear-gradient(135deg, var(--bordeaux) 0%, var(--bordeaux-dark) 100%);
-            border-radius: 12px;
-            padding: 56px 48px;
-            text-align: center;
-            margin: 64px 0;
-        }
-
-        .result-callout p {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0;
-        }
-
-        /* Checklist Section */
-        .checklist-section {
-            margin: 80px 0;
-        }
-
-        .checklist-section h2 {
-            font-size: 42px;
+        .cta-button {
+            display: inline-block;
+            background: var(--bordeaux);
+            color: white;
+            padding: 18px 48px;
+            text-decoration: none;
+            font-size: 15px;
             font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--bordeaux-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 37, 67, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container-wide {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
             margin-bottom: 16px;
-            letter-spacing: -0.01em;
-            text-align: center;
-            color: var(--black);
+            color: var(--text-dark);
         }
 
-        .checklist-subtitle {
-            text-align: center;
+        p {
+            margin-bottom: 20px;
+            color: var(--text-medium);
+        }
+
+        /* Case Study Section */
+        .case-study {
+            background: white;
+        }
+
+        .case-study-intro {
             font-size: 20px;
-            color: var(--gray-600);
-            margin-bottom: 64px;
+            color: var(--text-dark);
+            font-weight: 500;
         }
 
-        .checklist-category {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 56px;
-            margin-bottom: 48px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        .stats-table {
+            width: 100%;
+            margin: 40px 0;
+            border-collapse: collapse;
         }
 
-        .checklist-category h3 {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--bordeaux);
+        .stats-table th {
+            text-align: left;
+            padding: 16px 20px;
+            background: var(--bordeaux);
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
         }
 
-        .checklist-category .category-subtitle {
+        .stats-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .stats-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .highlight-box {
+            background: var(--cream);
+            border-left: 4px solid var(--bordeaux);
+            padding: 24px 32px;
+            margin: 32px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
             font-size: 18px;
-            color: var(--gray-600);
-            margin-bottom: 40px;
+            color: var(--text-dark);
+        }
+
+        /* Results Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .result-card {
+            background: var(--bordeaux);
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .result-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .result-label {
+            font-size: 14px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* Why Section */
+        .why-section {
+            background: var(--cream-dark);
+        }
+
+        .pattern-list {
+            margin: 32px 0;
+        }
+
+        .pattern-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+        }
+
+        .pattern-problem {
+            flex: 1;
+            color: var(--text-medium);
+        }
+
+        .pattern-arrow {
+            padding: 0 20px;
+            color: var(--bordeaux);
+            font-weight: 600;
+        }
+
+        .pattern-solution {
+            flex: 1;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Leaks Section */
+        .leaks-intro {
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .leaks-intro h2 {
+            font-size: 44px;
+        }
+
+        .leak-card {
+            background: white;
+            padding: 48px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 37, 67, 0.1);
+        }
+
+        .leak-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: var(--bordeaux);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .leak-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .leak-description {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+
+        .leak-cost {
+            background: var(--cream);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-left: 3px solid var(--gold);
+        }
+
+        .leak-cost strong {
+            color: var(--text-dark);
+        }
+
+        .leak-example {
+            font-size: 15px;
+            color: var(--text-light);
             font-style: italic;
+            margin-top: 16px;
         }
 
-        .checklist-item {
-            margin-bottom: 48px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid var(--gray-200);
+        .leak-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cream-dark);
         }
 
-        .checklist-item:last-child {
+        .leak-checkbox input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--bordeaux);
+        }
+
+        .leak-checkbox label {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Score Section */
+        .score-section {
+            background: var(--bordeaux);
+            color: white;
+            text-align: center;
+        }
+
+        .score-section h2 {
+            color: white;
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .score-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 28px;
+            text-align: left;
+        }
+
+        .score-range {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .score-meaning {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* What's Included */
+        .included-section {
+            background: white;
+        }
+
+        .included-list {
+            margin: 32px 0;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .included-number {
+            width: 36px;
+            height: 36px;
+            background: var(--bordeaux);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .included-text h4 {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .included-text p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        /* Apply Section */
+        .apply-section {
+            background: var(--cream-dark);
+            text-align: center;
+        }
+
+        .apply-section .container {
+            max-width: 700px;
+        }
+
+        .apply-qualifier {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+
+        .apply-details {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .apply-details p {
+            margin-bottom: 16px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .signature {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .signature-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .signature-title {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* PS Section */
+        .ps-section {
+            background: var(--cream);
+            padding: 60px 40px;
+        }
+
+        .ps-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            color: var(--text-medium);
+        }
+
+        .ps-content strong {
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Application Form */
+        .application-form {
+            background: white;
+            padding: 48px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+
+        .form-section:last-of-type {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .checklist-item h4 {
-            font-size: 21px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--black);
-        }
-
-        .checklist-item .question {
-            font-size: 17px;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .checklist-item .why-matters {
-            font-size: 16px;
-            color: var(--black);
-            margin-bottom: 12px;
-        }
-
-        .checklist-item .money-leak {
-            font-size: 16px;
+        .form-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
             color: var(--bordeaux);
-            margin-bottom: 12px;
-            font-weight: 600;
+            margin-bottom: 24px;
         }
 
-        .checklist-item .example {
-            font-size: 16px;
-            color: var(--gray-600);
-            padding: 20px;
-            background: var(--gray-100);
-            border-radius: 8px;
-            border-left: 3px solid var(--bordeaux);
-            line-height: 1.6;
+        .form-group {
+            margin-bottom: 24px;
         }
 
-        /* Score Section */
-        .score-section {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 56px;
-            margin: 80px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .score-section h2 {
-            font-size: 36px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--black);
-        }
-
-        .score-intro {
-            font-size: 18px;
-            color: var(--gray-600);
-            margin-bottom: 48px;
-        }
-
-        .score-range {
-            margin: 32px 0;
-            text-align: left;
-            padding: 24px;
-            background: var(--gray-100);
-            border-radius: 8px;
-        }
-
-        .score-range strong {
-            font-size: 19px;
-            color: var(--bordeaux);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .score-range p {
-            font-size: 16px;
-            color: var(--black);
+        .form-group:last-child {
             margin-bottom: 0;
         }
 
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            margin: 100px 0;
-        }
-
-        .cta-section h2 {
-            font-size: 44px;
-            font-weight: 600;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
-            color: var(--black);
-        }
-
-        .cta-section p {
-            font-size: 20px;
-            color: var(--black);
-            margin-bottom: 32px;
-            line-height: 1.7;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .includes-box {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 56px;
-            margin: 56px 0;
-            text-align: left;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .includes-box h3 {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 40px;
-            text-align: center;
-            color: var(--bordeaux);
-        }
-
-        .includes-list {
-            list-style: none;
-        }
-
-        .includes-list li {
-            font-size: 18px;
-            color: var(--black);
-            margin-bottom: 24px;
-            padding-left: 40px;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        .includes-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--bordeaux);
-            font-weight: 700;
-            font-size: 24px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--bordeaux) 0%, var(--bordeaux-dark) 100%);
-            color: var(--white);
-            font-size: 18px;
-            font-weight: 600;
-            padding: 20px 56px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin: 40px 0;
-            box-shadow: 0 8px 24px rgba(139, 37, 67, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(139, 37, 67, 0.4);
-        }
-
-        .guarantee {
-            font-size: 17px;
-            color: var(--gray-600);
-            margin-top: 32px;
-            font-style: italic;
-        }
-
-        /* Signature */
-        .signature {
-            margin-top: 80px;
-            padding-top: 48px;
-            border-top: 1px solid var(--gray-200);
-            text-align: center;
-        }
-
-        .signature p {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--black);
-        }
-
-        .signature .name {
-            font-size: 26px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--bordeaux);
-            font-family: 'Bodoni Moda', serif;
-        }
-
-        .signature .title {
-            font-size: 16px;
-            color: var(--gray-600);
-            margin-bottom: 6px;
-        }
-
-        /* PS Section */
-        .ps-section {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 48px;
-            margin-top: 48px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .ps-section strong {
-            font-size: 20px;
-            color: var(--bordeaux);
+        .form-group label {
             display: block;
-            margin-bottom: 16px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
         }
 
-        .ps-section p {
-            font-size: 17px;
-            color: var(--black);
-            line-height: 1.7;
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid #ddd;
+            background: var(--cream);
+            color: var(--text-dark);
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--bordeaux);
+            box-shadow: 0 0 0 3px rgba(139, 37, 67, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a4a4a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .form-submit .cta-button {
+            width: 100%;
+            max-width: 400px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-note {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 48px 20px;
-            }
-
-            .hero {
-                margin-top: 80px;
-            }
-
-            .hero h1 {
+            h1 {
                 font-size: 36px;
             }
 
-            .hero .subtitle {
-                font-size: 20px;
+            h2 {
+                font-size: 32px;
             }
 
-            .story-section h2,
-            .checklist-section h2,
-            .cta-section h2 {
-                font-size: 30px;
+            .hero {
+                padding: 120px 24px 60px;
             }
 
-            .checklist-category {
+            section {
+                padding: 60px 24px;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .score-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leak-card {
                 padding: 32px 24px;
             }
 
-            .result-callout p {
-                font-size: 24px;
+            .pattern-item {
+                flex-direction: column;
             }
 
-            .result-callout {
-                padding: 40px 28px;
+            .pattern-arrow {
+                padding: 10px 0;
+            }
+
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .application-form {
+                padding: 32px 24px;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
-            <a href="/" class="logo">MARISHA</a>
+            <div class="logo">MARISHA</div>
+            <a href="#apply" class="nav-cta">Apply Now</a>
         </div>
     </nav>
 
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>I Just Showed a Client How to Add $2.5M to Her Funnel... Without Spending Another Dollar on Ads</h1>
-            <p class="subtitle">And it took me 47 minutes.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-label">The Leaky Funnel Audit</div>
+        <h1>Find the Millions Hiding in Your Funnel</h1>
+        <p class="hero-subtitle">Without Spending Another Dollar on Ads</p>
+        <p class="hero-hook">You don't have a traffic problem. You have a leak problem. Right now, there's $1M-$3M draining out of your funnel before it ever converts.</p>
+        <a href="#apply" class="cta-button">Apply for a Leaky Funnel Audit</a>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study">
+        <div class="container">
+            <h2>I Found $2.5M in a Client's Funnel in 47 Minutes</h2>
+
+            <p class="case-study-intro">Let me tell you about Tiffany.</p>
+
+            <p>She runs a coaching program for entrepreneurs. $3M/year in revenue. Spending $250K/month on ads to generate... $250K in revenue.</p>
+
+            <p>Breakeven. Profitable on paper. Bleeding in reality.</p>
+
+            <p>When I ran her Leaky Funnel Audit, I found exactly where the money was draining out:</p>
+
+            <table class="stats-table">
+                <tr>
+                    <th>The Leak</th>
+                    <th>What I Found</th>
+                    <th>What It Should Be</th>
+                </tr>
+                <tr>
+                    <td>Cost per lead</td>
+                    <td>$84</td>
+                    <td>$40-60</td>
+                </tr>
+                <tr>
+                    <td>Show-up rate</td>
+                    <td>23%</td>
+                    <td>40%+</td>
+                </tr>
+                <tr>
+                    <td>Webinar close rate</td>
+                    <td>4.2%</td>
+                    <td>12-15%</td>
+                </tr>
+            </table>
+
+            <div class="highlight-box">
+                <p><strong>Same traffic. Same offer. Same audience.</strong> Just leaks everywhere.</p>
+            </div>
+
+            <h3>6 Fixes. No Extra Ad Spend. $2.5M Unlocked.</h3>
+
+            <table class="stats-table">
+                <tr>
+                    <th>Fix</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>Rewrote registration page</td>
+                    <td>CPL dropped to $47 (44% improvement)</td>
+                </tr>
+                <tr>
+                    <td>Fixed confirmation sequence</td>
+                    <td>Show-up rate jumped to 48%</td>
+                </tr>
+                <tr>
+                    <td>Restructured webinar pitch</td>
+                    <td>Close rate went to 11.3%</td>
+                </tr>
+                <tr>
+                    <td>Added replay sequence</td>
+                    <td>Captured 38% more revenue</td>
+                </tr>
+                <tr>
+                    <td>Implemented application calls</td>
+                    <td>Added 2% close rate</td>
+                </tr>
+                <tr>
+                    <td>Built nurture sequence</td>
+                    <td>Recovered 15% over 90 days</td>
+                </tr>
+            </table>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">$6,900</div>
+                    <div class="result-label">Per Day</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$207K</div>
+                    <div class="result-label">Per Month</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$2.5M</div>
+                    <div class="result-label">Per Year</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 20px; color: var(--text-dark);"><strong>84% revenue increase. Same ad spend.</strong><br>The money was always there. It was just leaking out.</p>
         </div>
+    </section>
 
-        <!-- Story Section -->
-        <div class="story-section">
-            <h2>Let me tell you about Tiffany.</h2>
-            
-            <p>Tiffany runs a coaching program for entrepreneurs with a great offer, an incredibly designed multi-step funnel, free webinars for acquisition, and more. She even has thousands of customers who really love her. And she was already doing $3M/year.</p>
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2>Why Funnels Leak (And Why Most Owners Don't See It)</h2>
 
-            <p>Most people would look at a $3M business and think, "She's crushing it."</p>
+            <p>After 15 years scaling funnels—including taking Mindvalley to $150M as Chief Growth Officer and driving $1B+ in client results through WeConquer Media—I've learned one thing:</p>
 
-            <p>The one thing she didn't have though? Profit.</p>
-
-            <p>But when I audited her webinar funnel, I nearly fell off my chair.</p>
-
-            <p>Her cost per lead was <span class="highlight">$84</span>. Industry benchmark? $40-60.</p>
-
-            <p>Her webinar show-up rate was <span class="highlight">23%</span>. It should be 45%+.</p>
-
-            <p>Her webinar-to-sale conversion was <span class="highlight">4.2%</span>. With her offer quality? Should be 12-15%.</p>
-
-            <div class="stat-box">
-                <h3>Here's what that means in plain English:</h3>
-                <p style="font-size: 18px;">And get this: she was spending $250k/month on ads to generate $250k in revenue.</p>
-                <p style="font-size: 18px; margin-top: 12px;">She was breaking even every single month with literally nothing to show for it.</p>
+            <div class="highlight-box">
+                <p><strong>95% of funnels are leaving $500K-$5M on the table.</strong></p>
             </div>
 
-            <p>After our audit, we mapped out 6 changes for Tiffany and her team to implement:</p>
+            <p>Not because the offer is bad. Not because the traffic is wrong. Because there are holes in the bucket that nobody's looking for.</p>
 
-            <div class="stat-box">
-                <ul class="stat-list">
-                    <li><strong>Rewrite the registration page</strong> with a clearer mechanism (CPL dropped to $47 — 44% improvement)</li>
-                    <li><strong>Fix the confirmation sequence</strong> to build anticipation (show-up rate jumped to 48%)</li>
-                    <li><strong>Restructure the webinar pitch</strong> with proper future-pacing (close rate went to 11.3%)</li>
-                    <li><strong>Add a replay sequence</strong> for no-shows (captured 38% more revenue)</li>
-                    <li><strong>Implement application calls</strong> for those sitting on the fence (added another 2% close rate)</li>
-                    <li><strong>Build a nurture sequence</strong> for indecisive leads (recovered 15% over 90 days)</li>
-                </ul>
+            <p><strong>The pattern is always the same:</strong></p>
+
+            <div class="pattern-list">
+                <div class="pattern-item">
+                    <div class="pattern-problem">$1M business thinks they need more traffic</div>
+                    <div class="pattern-arrow">→</div>
+                    <div class="pattern-solution">Actually needs 30% better landing page</div>
+                </div>
+                <div class="pattern-item">
+                    <div class="pattern-problem">$3M business thinks they need a new offer</div>
+                    <div class="pattern-arrow">→</div>
+                    <div class="pattern-solution">Actually needs 50% better show-up rate</div>
+                </div>
+                <div class="pattern-item">
+                    <div class="pattern-problem">$5M business thinks they need better sales team</div>
+                    <div class="pattern-arrow">→</div>
+                    <div class="pattern-solution">Actually needs a better webinar pitch</div>
+                </div>
             </div>
 
-            <p><strong>And here's the kicker.</strong></p>
-
-            <p>It took just 8 weeks to implement.</p>
-
-            <p>There was no rebuild required. No complicated overhaul that needed agency support. No ripping everything apart and starting from scratch.</p>
-
-            <p>Her team was able to do 100% of the work required.</p>
-
-            <p>We just showed them where to focus and where to double down.</p>
-
-            <div class="result-callout">
-                <p>And that brought in an extra:</p>
-                <p style="margin-top: 16px; font-size: 36px; font-weight: 700;">$6,900 a day</p>
-                <p style="margin-top: 8px; font-size: 36px; font-weight: 700;">$207k a month</p>
-                <p style="margin-top: 8px; font-size: 36px; font-weight: 700;">$2.5M a year</p>
-                <p style="font-size: 20px; margin-top: 24px; font-weight: 400;">Think about that for a second. Tiffany made 84% more revenue per day — with the same ad spend, same offer, same team — just by fixing two leaks.</p>
-            </div>
+            <p style="font-size: 20px; color: var(--text-dark); margin-top: 40px;"><strong>The optimization always comes before the scale.</strong><br>Scaling a leaky funnel just means losing money faster.</p>
         </div>
+    </section>
 
-        <!-- Why I'm Sharing This -->
-        <div class="story-section">
-            <h2>Why I'm Sharing This With You</h2>
-
-            <p>I've been doing this for 15 years.</p>
-
-            <p>I scaled Mindvalley to $150M as Chief Growth Officer. I've run WeConquer Media, where we've driven over $1 billion in client results. I audit 4-6 funnels every single month for companies doing $1M-50M/year.</p>
-
-            <p>And here's what I've learned:</p>
-
-            <p class="highlight" style="font-size: 22px; margin: 32px 0;">95% of funnels are leaving $500k-5M on the table.</p>
-
-            <p>Not because the offer is bad. Not because the traffic is wrong. Not because they need a "new strategy."</p>
-
-            <p>Because they're making the same 15-20 conversion mistakes I see over and over again.</p>
-
-            <p>Small leaks. Invisible to most people. But devastating to your bottom line.</p>
-
-            <p>A weak headline that drops conversion 40%. A confirmation page that kills your show-up rate. A pitch structure that makes people "think about it" instead of buy.</p>
-
-            <p class="highlight" style="font-size: 20px;">These aren't philosophical problems. They're mathematical ones.</p>
-
-            <p>And once you see them, you can't unsee them.</p>
-        </div>
-
-        <!-- The Tiffany Principle -->
-        <div class="story-section">
-            <h2>The Tiffany Principle: Why $3M Businesses Stay at $3M</h2>
-
-            <p>Tiffany thought her problem was traffic. She was about to go hire a media buyer and double her ad spend to $500k/month.</p>
-
-            <p class="highlight" style="font-size: 20px;">That would have been a disaster.</p>
-
-            <p>Because when your funnel is only breaking even, scaling means losing money faster.</p>
-
-            <p>Instead, we audited the funnel first and showed her team exactly what to fix. Now she's profitable at $250k/month in spend... and she's scaling to $400k because the unit economics actually work.</p>
-
-            <p>This is the pattern I see constantly:</p>
-
-            <div class="stat-box">
-                <ul class="stat-list">
-                    <li><strong>$1M business thinks they need more traffic</strong> → Actually need a 30% better landing page</li>
-                    <li><strong>$3M business thinks they need a new offer</strong> → Actually need a 50% better show-up rate</li>
-                    <li><strong>$5M business thinks they need better sales team</strong> → Actually need a pitch that pre-closes prospects</li>
-                </ul>
+    <!-- Leaks Section -->
+    <section class="leaks-section">
+        <div class="container-wide">
+            <div class="leaks-intro">
+                <h2>The 10 Profit Leaks Hiding Millions in Your Funnel</h2>
+                <p style="font-size: 18px;">I audit 4 funnels a month for companies doing $1M-$50M.<br>These are the leaks I find over and over again.</p>
+                <p style="font-size: 20px; color: var(--text-dark); margin-top: 24px;"><strong>How many are in YOUR funnel?</strong></p>
             </div>
 
-            <p class="highlight" style="font-size: 20px; margin-top: 32px;">The optimization always comes before the scale.</p>
-
-            <p>Because if you scale a broken funnel, you just lose money faster.</p>
-        </div>
-
-        <!-- Checklist Introduction -->
-        <div class="story-section">
-            <h2>The 20 Conversion Leaks I Find in Every Audit</h2>
-
-            <p>Over the past decade, I've audited hundreds of webinar and course funnels. And I keep finding the same mistakes.</p>
-
-            <p>So I built this checklist.</p>
-
-            <p>These are the 20 most common (and expensive) conversion leaks that are probably in your funnel right now. Each one can cost you 6-7 figures annually if left unfixed.</p>
-
-            <p>I'm giving this to you for free because:</p>
-
-            <div class="stat-box">
-                <ul class="stat-list">
-                    <li><strong>You'll immediately see where you're bleeding money</strong> (most people find 8-12 issues)</li>
-                    <li><strong>You'll understand why your funnel isn't scaling</strong> (it's usually 2-3 critical bottlenecks)</li>
-                    <li><strong>You'll know exactly what to fix first</strong> (not everything matters equally)</li>
-                </ul>
-            </div>
-
-            <p>And if you want me to personally walk through your funnel and show you the exact optimizations that could add $500k-3M to your bottom line, I do comprehensive funnel audits every month.</p>
-
-            <p class="highlight" style="font-size: 20px; margin: 32px 0;">Here's my promise: You'll see exactly where your funnel is bleeding money and get a clear roadmap to fix it.</p>
-
-            <p>(Tiffany made back $280k in her first month from just the top 3 fixes.)</p>
-
-            <p>But first, go through this checklist. See what you find. Then decide if you want my eyes on your funnel.</p>
-        </div>
-
-        <!-- Checklist Section -->
-        <div class="checklist-section">
-            <h2>THE $20M FUNNEL AUDIT PLAYBOOK</h2>
-            <p class="checklist-subtitle">20 Critical Conversion Leaks Costing You 6-7 Figures Annually</p>
-
-            <!-- Section 1 -->
-            <div class="checklist-category">
-                <h3>SECTION 1: TRAFFIC & TRACKING FOUNDATION</h3>
-                <p class="category-subtitle">The "Am I Flying Blind?" Test</p>
-
-                <div class="checklist-item">
-                    <h4>□ 1. Conversion Tracking Accuracy</h4>
-                    <p class="question">Are you tracking conversions with both pixel AND server-side tracking (CAPI)?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> iOS 14+ blocks 30-40% of pixel data. If you're not seeing this, you're optimizing blind.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> $50k/month in ads = $15k/month wasted on ghost traffic</p>
-                    <p class="example"><strong>Real example:</strong> Client was "scaling" an audience with 8x ROAS. Turned on CAPI. Actual ROAS was 2.1x. We killed it and saved $40k/month.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 2. Attribution Window Mapping</h4>
-                    <p class="question">Do you know your actual customer journey length (first touch to purchase)?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> If your sales cycle is 14 days but you're only tracking 7-day attribution, you're killing winners.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Cutting profitable campaigns = 30-50% higher CAC</p>
-                    <p class="example"><strong>Real example:</strong> Client's "best" audience had a 21-day decision window. We extended attribution and found 40% more conversions we were missing.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 3. The "Trojan Horse Landing Page"</h4>
-                    <p class="question">Are you using a free diagnostic tool/calculator/assessment instead of direct webinar registration?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> People love self-assessment. Gets them invested before they even register. Cuts through ad fatigue completely.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Direct webinar pages convert at 15-20%. Calculator-first converts at 40-50%.</p>
-                    <p class="example"><strong>Real example:</strong> Client replaced webinar registration with "Funnel Profitability Calculator." Conversion rate went from 18% to 47% because people wanted their score. 80% of calculator completers registered for webinar.</p>
+            <!-- Leak 1 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 01</div>
+                <div class="leak-title">Emails Landing in Spam</div>
+                <p class="leak-description">You're sending emails. But are they arriving? Most funnel owners have no idea their emails are hitting spam or promotions tabs. SPF, DKIM, DMARC aren't configured. Your best copy is going unseen.</p>
+                <div class="leak-cost"><strong>The cost:</strong> Every email in spam is a lead you paid for who never sees your offer.</div>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak1">
+                    <label for="leak1">My email deliverability is configured and tested</label>
                 </div>
             </div>
 
-            <!-- Section 2 -->
-            <div class="checklist-category">
-                <h3>SECTION 2: LANDING PAGE CONVERSION KILLERS</h3>
-                <p class="category-subtitle">The "First Impression" Test</p>
-
-                <div class="checklist-item">
-                    <h4>□ 4. Above-the-Fold Clarity</h4>
-                    <p class="question">Can someone articulate your unique mechanism in 3 seconds?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> 53% of mobile users abandon unclear pages immediately.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> 40% bounce rate improvement = 40% more leads at same ad spend</p>
-                    <p class="example"><strong>Real example:</strong> Changed headline from "Master Your Business Operations" to "The 90-Day Operator Blueprint: How 7-Figure Entrepreneurs Eliminate Chaos Without Hiring a COO" — CPL dropped 38%.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 5. The "Competitor Shadow Campaign"</h4>
-                    <p class="question">Are you running Google Search ads on competitor brand names + "review" or "alternative"?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> You're catching people in active buying mode who are researching your competitor. Conversion rates are 3-5x higher than cold traffic.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Ignoring competitor search traffic = missing your hottest leads at lowest CAC</p>
-                    <p class="example"><strong>Real example:</strong> Client was spending $80k/month on cold Facebook ads. We added $15k/month on competitor search terms. Those leads closed at $197 CPA vs $420 CPA for FB cold traffic. Same budget, 2x more customers.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 6. The "Breakup Email" Dead Lead Reactivation</h4>
-                    <p class="question">For people who registered but didn't show or didn't buy, are you sending a "breakup email" 30 days later?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Re-engages dead leads by giving them an out. The ones who reply are HOT and often convert at 2-3x normal rates because they self-select back in.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Dead lists with 10,000+ leads = $200k-500k in dormant revenue</p>
-                    <p class="example"><strong>Real example:</strong> Client had 40,000 dead webinar registrants. Sent breakup email: "It's been a month. I'm guessing this isn't a priority. Unsubscribe or reply if you want one more shot." 380 replied wanting "one more shot." Booked 90 on calls. Closed 31 deals = $147k from dead list.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 7. CTA Friction Audit</h4>
-                    <p class="question">How many clicks/fields between landing and registration?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Every additional field drops conversions 10-15%. Every extra click loses 25%.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Reducing 7 fields to 3 = 2x more registrations</p>
-                    <p class="example"><strong>Real example:</strong> Client had a 2-step registration (email → form page with 8 fields). We made it 1-step with 3 fields. Reg rate went from 18% to 44%.</p>
+            <!-- Leak 2 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 02</div>
+                <div class="leak-title">Webinar Show-Up Rates Below 30%</div>
+                <p class="leak-description">Industry average is 12-15%. It should be 40%+. If you're not using SMS/WhatsApp backup, pre-webinar content, and a strategic reminder sequence, you're paying for registrants who never show.</p>
+                <div class="leak-cost"><strong>The cost:</strong> Doubling your show-up rate doubles your revenue from the same ad spend.</div>
+                <p class="leak-example">Example: Added a 90-second video to confirmation page. Show-up went from 26% → 47%.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak2">
+                    <label for="leak2">My show-up rate is 35% or higher</label>
                 </div>
             </div>
 
-            <!-- Section 3 -->
-            <div class="checklist-category">
-                <h3>SECTION 3: WEBINAR REGISTRATION → SHOW-UP RATE</h3>
-                <p class="category-subtitle">The "Commitment Gap"</p>
-
-                <div class="checklist-item">
-                    <h4>□ 8. Confirmation Page Indoctrination</h4>
-                    <p class="question">Does your thank-you page pre-sell the webinar outcome and build anticipation?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> A strategic confirmation page increases show-up rates from 25% to 45%+.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> 20% more attendees = $40k extra revenue per webinar (at 1000 reg)</p>
-                    <p class="example"><strong>Real example:</strong> Added a 90-second video on confirmation page showing "the 3 myths I'm going to destroy on this webinar." Show-up rate went from 26% to 47%.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 9. Reminder Sequence Psychology</h4>
-                    <p class="question">Are you sending 5+ reminders with escalating urgency and specificity?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Most people register and forget. Your sequence determines if they show up.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Poor sequence = 25% show rate. Optimized = 50%+ (2x revenue per webinar)</p>
-                    <p class="example"><strong>Real example:</strong> Client was sending 3 generic reminders. We built 7 emails that revealed "what you'll learn" progressively. Show rate jumped from 29% to 51%.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 10. The "LinkedIn DM → Webinar Bridge"</h4>
-                    <p class="question">Are you using LinkedIn ads to a lead magnet, then having someone send personalized connection + DM invites to an exclusive session?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> LinkedIn DMs have 10x higher engagement than email. Personal invite feels VIP. Show-up rates are 60-75% vs 25-35% for email.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Email-only webinar invites = 70% of registrants never show up</p>
-                    <p class="example"><strong>Real example:</strong> Client was running LinkedIn ads straight to webinar reg (22% conversion, 31% show-up). We added lead magnet → manual DM sequence. Show-up rate jumped to 68%. Close rate went from 9% to 14% because attendees felt personally invited.</p>
+            <!-- Leak 3 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 03</div>
+                <div class="leak-title">No Post-Webinar Follow-Up Sequence</div>
+                <p class="leak-description">The webinar ends. You send one replay email. Then silence. Meanwhile, 70% of your buyers need 3-7 days to decide. You're abandoning them right when they're most ready to buy.</p>
+                <div class="leak-cost"><strong>The cost:</strong> $100K+ per webinar sitting in your "didn't buy yet" list.</div>
+                <p class="leak-example">Example: Added 48-hour replay sequence. Recovered $127K/month.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak3">
+                    <label for="leak3">I have a 5+ email post-webinar sequence</label>
                 </div>
             </div>
 
-            <!-- Section 4 -->
-            <div class="checklist-category">
-                <h3>SECTION 4: WEBINAR CONVERSION ARCHITECTURE</h3>
-                <p class="category-subtitle">The "Pitch Mechanics"</p>
-
-                <div class="checklist-item">
-                    <h4>□ 11. The Big Mechanism</h4>
-                    <p class="question">Do you have ONE unique mechanism that's different from competitors?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> "Better course on Facebook ads" converts at 3%. "The 7-Figure Ad Account Blueprint" converts at 12%.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> 4x close rate difference = $120k vs $30k per webinar</p>
-                    <p class="example"><strong>Real example:</strong> Client was teaching "how to systematize." We reframed it as "The Operator Blueprint: 4 Systems That Run Your Business Without You." Close rate went from 3.8% to 11.2%.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 12. Future-Pacing & Belief Stacking</h4>
-                    <p class="question">Are you showing them their life AFTER using your method (not just teaching)?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Education-only webinars convert at 2-4%. Future-paced webinars convert at 8-15%.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Tripling close rate = 3x revenue per traffic dollar</p>
-                    <p class="example"><strong>Real example:</strong> Client spent 60 mins teaching, 15 mins pitching. We flipped it: 20 mins teaching, 55 mins showing transformations + what their life looks like after. Close rate tripled.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 13. Price Anchoring & Stack</h4>
-                    <p class="question">Do you reveal price AFTER building perceived value to 10x the ask?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Revealing $2k before value = 3% close. After proper stack = 12%.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> $90k vs $360k revenue per 1000 attendees</p>
-                    <p class="example"><strong>Real example:</strong> Client was revealing price at minute 40. We moved it to minute 68 after stacking $47k in perceived value for a $3,997 offer. Close rate went from 4.1% to 13.7%.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 14. Urgency Architecture</h4>
-                    <p class="question">Is your deadline real, specific, and tied to a legitimate reason?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Fake scarcity destroys trust. Real scarcity (cohort starts, bonus expires) converts 3-5x higher.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Weak urgency = 50% of sales lost to "I'll think about it"</p>
-                    <p class="example"><strong>Real example:</strong> Changed from "sale ends Friday" to "Cohort 12 starts Monday with live kickoff call. If you miss it, next cohort is 8 weeks away." Immediate purchases jumped 67%.</p>
+            <!-- Leak 4 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 04</div>
+                <div class="leak-title">Underutilizing Your Email List</div>
+                <p class="leak-description">You email when you launch. That's it. No weekly value emails. No upsell sequences. No cross-sells. No promotional campaigns. No dead-lead reactivation. Your list is an asset collecting dust.</p>
+                <div class="leak-cost"><strong>The cost:</strong> A properly worked email list adds 20-40% to total revenue.</div>
+                <p class="leak-example">Example: "Breakup email" to 40,000 dead registrants recovered $147K (31 deals closed).</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak4">
+                    <label for="leak4">I email my list at least weekly with value + offers</label>
                 </div>
             </div>
 
-            <!-- Section 5 -->
-            <div class="checklist-category">
-                <h3>SECTION 5: POST-WEBINAR CONVERSION SEQUENCE</h3>
-                <p class="category-subtitle">The "Ghost Money"</p>
-
-                <div class="checklist-item">
-                    <h4>□ 15. Replay Strategy</h4>
-                    <p class="question">Are no-shows getting a replay with SHORTER deadline than live attendees?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> 30-40% of revenue comes from replay viewers IF sequenced correctly.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Ignoring replays = leaving $60k+ on table per webinar</p>
-                    <p class="example"><strong>Real example:</strong> Client wasn't sending replays. We built a 48-hour replay sequence. Added $127k/month from people who registered but didn't show live.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 16. The "3-2-1 Countdown Reveal" Post-Webinar Sequence</h4>
-                    <p class="question">Are you breaking your offer reveal into 3 sequential emails over 48 hours instead of one big pitch email?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Most people send everything at once. Splitting creates 3 touch points and lets you segment based on who opens what. Fence-sitters need multiple touches.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> One-email approach = 65% of potential buyers never see your offer</p>
-                    <p class="example"><strong>Real example:</strong> Client was sending one post-webinar email with price + stack + bonuses (8% conversion). We split into Email 1: "Here's the price," Email 2: "Here's what you get," Email 3: "Bonuses expire in 24 hours." Backend conversion went from 8% to 23% because fence-sitters got multiple decision points.</p>
-                </div>
-
-                <div class="checklist-item">
-                    <h4>□ 17. Application Funnel Recovery</h4>
-                    <p class="question">If using applications, are you calling no-shows within 2 hours?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> Speed to lead determines close rate. <2 hours = 60% contact rate. >24 hours = 15%.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> 4x more conversations = 4x more high-ticket sales</p>
-                    <p class="example"><strong>Real example:</strong> Client was calling app submissions once/day in batches. We implemented real-time calling within 30 mins. Contact rate went from 22% to 64%. Close rate jumped accordingly.</p>
+            <!-- Leak 5 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 05</div>
+                <div class="leak-title">No Upsells or Order Bumps</div>
+                <p class="leak-description">Someone's at checkout, credit card in hand, and you're only offering one thing. No order bump. No one-click upsell. No backend continuity. No high-ticket ascension path.</p>
+                <div class="leak-cost"><strong>The cost:</strong> You're leaving 60-70% of customer lifetime value on the table.</div>
+                <p class="leak-example">Example: Added $12K continuity + $25K mastermind. LTV went from $3,100 → $11,400.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak5">
+                    <label for="leak5">I have upsells, order bumps, and a backend offer</label>
                 </div>
             </div>
 
-            <!-- Section 6 -->
-            <div class="checklist-category">
-                <h3>SECTION 6: FUNNEL ECONOMICS & BOTTLENECK DIAGNOSIS</h3>
-                <p class="category-subtitle">The "CFO Test"</p>
-
-                <div class="checklist-item">
-                    <h4>□ 18. Unit Economics Mapping</h4>
-                    <p class="question">Do you know your numbers at EVERY stage (CPM, CPC, CPL, cost per registrant, cost per attendee, CPA, LTV)?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> If you don't know where you're bleeding, you can't fix it. Most funnels have 1-2 major leaks killing ROI.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Fixing the #1 bottleneck typically unlocks 40-100% more profit</p>
-                    <p class="example"><strong>Real example:</strong> Client thought their problem was ad creative (CPL was $84). Real problem was 23% show-up rate. Fixed that first, unlocked $2.5M+/year.</p>
+            <!-- Leak 6 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 06</div>
+                <div class="leak-title">Selling Features Instead of Transformation</div>
+                <p class="leak-description">Your copy lists what's included: "10 modules, 47 videos, lifetime access." Nobody cares. They care about who they become. Features inform. Transformation sells.</p>
+                <div class="leak-cost"><strong>The cost:</strong> "A better course on Facebook ads" converts at 3%. "The 7-Figure Ad Account Blueprint" converts at 12%.</div>
+                <p class="leak-example">Example: Renamed offer from "Systematize" → "The Operator Blueprint." Close rate went 3.8% → 11.2%.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak6">
+                    <label for="leak6">My headline promises a specific transformation, not information</label>
                 </div>
+            </div>
 
-                <div class="checklist-item">
-                    <h4>□ 19. Comparative Cohort Analysis</h4>
-                    <p class="question">Are you comparing traffic sources, offers, and audiences weekly?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> What you're scaling might be your worst performer. Best audience often gets 10x ROI vs worst.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Scaling wrong audience = burning $50k+/month in negative ROI</p>
-                    <p class="example"><strong>Real example:</strong> Client was scaling "entrepreneurs 30-50" broadly. We tested 8 sub-segments. Found "female service providers $1-3M revenue" had 9.2x ROAS vs 1.8x average. Shifted all budget there.</p>
+            <!-- Leak 7 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 07</div>
+                <div class="leak-title">Slow Page Load Speed</div>
+                <p class="leak-description">Your page takes 4+ seconds to load. 40% of visitors are gone before they see your headline. You're paying for traffic that bounces before the page even renders.</p>
+                <div class="leak-cost"><strong>The cost:</strong> Every 1-second delay reduces conversions by 7%.</div>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak7">
+                    <label for="leak7">My landing pages load in under 3 seconds</label>
                 </div>
+            </div>
 
-                <div class="checklist-item">
-                    <h4>□ 20. LTV Optimization Post-Purchase</h4>
-                    <p class="question">Are you tracking and optimizing 90-day retention, upsells, and ascension?</p>
-                    <p class="why-matters"><strong>Why it matters:</strong> A customer worth $2k vs $6k changes EVERYTHING. You can pay 3x more to acquire them.</p>
-                    <p class="money-leak"><strong>Money leak:</strong> Ignoring backend = leaving 60-70% of lifetime value on table</p>
-                    <p class="example"><strong>Real example:</strong> Client had $3k front-end offer, nothing behind it. We built a $12k/year continuity + $25k mastermind ascension path. LTV went from $3,100 to $11,400. Completely changed their acquisition math.</p>
+            <!-- Leak 8 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 08</div>
+                <div class="leak-title">Price Revealed Too Early</div>
+                <p class="leak-description">You show the price before you've stacked the value. Revealing $2K before building perceived value = 3% close rate. After a proper value stack = 12%.</p>
+                <div class="leak-cost"><strong>The cost:</strong> $90K vs $360K revenue per 1,000 attendees.</div>
+                <p class="leak-example">Example: Moved price reveal from minute 40 → minute 68 with $47K value stack. Close rate went 4.1% → 13.7%.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak8">
+                    <label for="leak8">I stack value to 10X before revealing price</label>
+                </div>
+            </div>
+
+            <!-- Leak 9 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 09</div>
+                <div class="leak-title">Fake Urgency Nobody Believes</div>
+                <p class="leak-description">"Limited spots available" every single week. Countdown timers that reset. "Sale ends Friday" with no real reason. Your audience has been trained to ignore your deadlines.</p>
+                <div class="leak-cost"><strong>The cost:</strong> Weak urgency loses 50% of sales to "I'll think about it."</div>
+                <p class="leak-example">Example: Changed "Sale ends Friday" → "Cohort starts Monday, 12 spots." Immediate purchases up 67%.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak9">
+                    <label for="leak9">My scarcity is real, specific, and tied to a legitimate reason</label>
+                </div>
+            </div>
+
+            <!-- Leak 10 -->
+            <div class="leak-card">
+                <div class="leak-number">LEAK 10</div>
+                <div class="leak-title">Single-Channel Dependency</div>
+                <p class="leak-description">You rely 100% on email. No SMS. No WhatsApp. No retargeting. No LinkedIn. When deliverability dips or attention shifts, your entire funnel breaks.</p>
+                <div class="leak-cost"><strong>The cost:</strong> Multi-channel funnels see 30-50% higher engagement and show-up rates.</div>
+                <p class="leak-example">Example: Added LinkedIn DMs to webinar invites. Show-up went 31% → 68%. Close rate went 9% → 14%.</p>
+                <div class="leak-checkbox">
+                    <input type="checkbox" id="leak10">
+                    <label for="leak10">I use at least 2 channels to reach my audience</label>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Score Section -->
-        <div class="score-section">
-            <h2>YOUR FUNNEL AUDIT SCORE</h2>
-            <p class="score-intro">Count how many boxes you checked:</p>
+    <!-- Score Section -->
+    <section class="score-section">
+        <div class="container">
+            <h2>Your Leaky Funnel Score</h2>
+            <p style="font-size: 20px; color: white;">How many boxes did you check?</p>
 
-            <div class="score-range">
-                <strong>16-20 Optimized:</strong>
-                <p>You're in the top 5% of funnel operators. Minor tweaks could add $100k-500k/year.</p>
-            </div>
-
-            <div class="score-range">
-                <strong>11-15 Healthy:</strong>
-                <p>You're doing well but leaving $250k-750k on the table annually.</p>
-            </div>
-
-            <div class="score-range">
-                <strong>6-10 Leaking:</strong>
-                <p>You have critical gaps costing you $500k-1.5M per year.</p>
-            </div>
-
-            <div class="score-range">
-                <strong>0-5 Broken:</strong>
-                <p>Your funnel is hemorrhaging cash. Emergency audit needed. Likely losing $1M-3M annually.</p>
+            <div class="score-grid">
+                <div class="score-card">
+                    <div class="score-range">8-10 Checked</div>
+                    <div class="score-meaning">You're in the top 5%. Minor tweaks could add $100K-$500K/year.</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-range">5-7 Checked</div>
+                    <div class="score-meaning">You're doing well but leaving $250K-$750K on the table annually.</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-range">3-4 Checked</div>
+                    <div class="score-meaning">You have critical gaps costing you $500K-$1.5M per year.</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-range">0-2 Checked</div>
+                    <div class="score-meaning">Your funnel is hemorrhaging cash. Likely losing $1M-$3M annually.</div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>What Happens Next?</h2>
+    <!-- What's Included Section -->
+    <section class="included-section">
+        <div class="container">
+            <h2>If You Found 5+ Leaks, You Now Know Where the Money Is Hiding</h2>
 
-            <p>If you found 5+ leaks in your funnel, you now know where the money is hiding.</p>
+            <p>But knowing where the leak is and actually fixing it are two different skills.</p>
 
-            <p>But here's the thing: <span class="highlight">Knowing where the leak is and actually fixing it are two different skills.</span></p>
+            <p>I've spent 15 years becoming extremely good at the second part. I don't just tell you "your show-up rate is low." I give you the exact copy, the frameworks, the sequences, and the psychology to fix it.</p>
 
-            <p>I've spent 15 years becoming extremely good at the second part.</p>
+            <h3 style="margin-top: 48px;">What a Leaky Funnel Audit Includes</h3>
 
-            <p>When I audit a funnel, I don't just tell you "your show-up rate is low." I show you exactly how to rebuild your entire confirmation sequence, what to write in your reminder emails, and the psychological triggers that get people to show up.</p>
-
-            <p>I don't just say "your pitch needs work." I give you the frameworks to restructure your entire webinar — the same frameworks that have generated over $1 billion in client results.</p>
-
-            <div class="includes-box">
-                <h3>What a comprehensive funnel audit includes:</h3>
-                <ul class="includes-list">
-                    <li><strong>Complete funnel teardown</strong> — I go through every pixel of your funnel and document every leak</li>
-                    <li><strong>Prioritized optimization roadmap</strong> — The exact order to fix things for maximum ROI</li>
-                    <li><strong>Copy recommendations + creative direction</strong> — Headlines, CTAs, email sequences, pitch structure</li>
-                    <li><strong>Projected revenue impact</strong> — I show you the math on what each fix will unlock</li>
-                    <li><strong>Implementation guidance</strong> — Support to make sure your team is executing correctly</li>
-                </ul>
+            <div class="included-list">
+                <div class="included-item">
+                    <div class="included-number">1</div>
+                    <div class="included-text">
+                        <h4>Complete Funnel Teardown</h4>
+                        <p>Documenting every leak across your entire funnel</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-number">2</div>
+                    <div class="included-text">
+                        <h4>Prioritized Optimization Roadmap</h4>
+                        <p>What to fix first for maximum ROI</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-number">3</div>
+                    <div class="included-text">
+                        <h4>Copy Recommendations + Creative Direction</h4>
+                        <p>For the highest-impact fixes</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-number">4</div>
+                    <div class="included-text">
+                        <h4>Projected Revenue Impact</h4>
+                        <p>With the math to back it up</p>
+                    </div>
+                </div>
+                <div class="included-item">
+                    <div class="included-number">5</div>
+                    <div class="included-text">
+                        <h4>Implementation Guidance</h4>
+                        <p>So you can execute (or hand to your team)</p>
+                    </div>
+                </div>
             </div>
 
-            <p class="highlight" style="font-size: 22px; margin: 48px 0;">Most clients add $500k-3M annually from implementing the optimization roadmap.</p>
+            <div class="highlight-box" style="margin-top: 40px;">
+                <p><strong>Most clients add $500K-$3M annually</strong> from implementing the audit roadmap.<br><strong>Typical payback period: less than 30 days.</strong></p>
+            </div>
+        </div>
+    </section>
 
-            <p>Tiffany added $2.5M in year one from just 6 changes.</p>
+    <!-- Apply Section -->
+    <section class="apply-section" id="apply">
+        <div class="container">
+            <h2>Apply for a Leaky Funnel Audit</h2>
 
-            <p>The typical payback period is less than 30 days. Everything after that is pure profit.</p>
+            <p class="apply-qualifier">I take on <strong>4 audits a month</strong> (because I do the work myself, not a junior team member).</p>
 
-            <a href="https://calendly.com/weconquermedia/30min?" class="cta-button">BOOK YOUR FREE 15-MIN FUNNEL CHECK-UP NOW →</a>
+            <div class="apply-details" style="text-align: center;">
+                <p>This is for funnel owners doing <strong>$1M+ in revenue</strong> who are tired of buying more traffic and ready to plug the leaks in what they've already built.</p>
+            </div>
 
-            <p class="guarantee">I only take 5 audits a month (because I actually do the work myself, not a junior team member).</p>
+            <!-- Application Form -->
+            <form action="https://formspree.io/f/xykdyjyp" method="POST" class="application-form">
 
-            <p class="guarantee">Spots typically book 3-4 weeks out.</p>
+                <div class="form-section">
+                    <div class="form-section-title">The Basics</div>
 
-            <p style="margin-top: 48px;">If you're ready to stop leaving money on the table and start scaling a funnel that actually works, let's talk.</p>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website / Funnel URL *</label>
+                        <input type="url" id="website" name="website" placeholder="https://" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-links">Additional Links (optional)</label>
+                        <textarea id="additional-links" name="additional_links" rows="3" placeholder="Loom walkthrough, KPI spreadsheet, funnel map, landing pages — paste any links that help me understand your funnel."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">Your Business</div>
+
+                    <div class="form-group">
+                        <label for="revenue">Current Annual Revenue *</label>
+                        <select id="revenue" name="revenue" required>
+                            <option value="">Select one...</option>
+                            <option value="Under $500K">Under $500K</option>
+                            <option value="$500K - $1M">$500K - $1M</option>
+                            <option value="$1M - $3M">$1M - $3M</option>
+                            <option value="$3M - $5M">$3M - $5M</option>
+                            <option value="$5M - $10M">$5M - $10M</option>
+                            <option value="$10M+">$10M+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adspend">Monthly Ad Spend *</label>
+                        <select id="adspend" name="adspend" required>
+                            <option value="">Select one...</option>
+                            <option value="Under $10K">Under $10K</option>
+                            <option value="$10K - $25K">$10K - $25K</option>
+                            <option value="$25K - $50K">$25K - $50K</option>
+                            <option value="$50K - $100K">$50K - $100K</option>
+                            <option value="$100K - $250K">$100K - $250K</option>
+                            <option value="$250K+">$250K+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="funnel-type">What Type of Funnel Are You Running? *</label>
+                        <select id="funnel-type" name="funnel_type" required>
+                            <option value="">Select one...</option>
+                            <option value="Webinar Funnel">Webinar Funnel</option>
+                            <option value="VSL Funnel">VSL Funnel</option>
+                            <option value="Application Funnel">Application Funnel</option>
+                            <option value="Challenge Funnel">Challenge Funnel</option>
+                            <option value="Low-Ticket Tripwire">Low-Ticket Tripwire</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-title">The Real Questions</div>
+
+                    <div class="form-group">
+                        <label for="biggest-leak">What do you think is your biggest leak right now? *</label>
+                        <textarea id="biggest-leak" name="biggest_leak" rows="4" placeholder="Be specific — the more detail, the better I can assess fit." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ready">If we find $500K+ in hidden revenue, are you ready to implement within 30 days? *</label>
+                        <select id="ready" name="ready_to_implement" required>
+                            <option value="">Select one...</option>
+                            <option value="Yes - I'm ready to move fast">Yes - I'm ready to move fast</option>
+                            <option value="Yes - but I'll need my team to execute">Yes - but I'll need my team to execute</option>
+                            <option value="Need to discuss with partner/team first">Need to discuss with partner/team first</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="why">Why do you want to work with Marisha? *</label>
+                        <textarea id="why" name="why_marisha" rows="4" placeholder="What made you apply today?" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="cta-button">Submit My Application</button>
+                    <p class="form-note">You'll hear back within 5 business days if you're a fit.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2>About Marisha</h2>
+
+            <p>I scaled Mindvalley to $150M as Chief Growth Officer. I've generated $1B+ in results for clients through WeConquer Media. I audit 4 funnels a month for companies doing $1M-$50M.</p>
+
+            <p>I don't do "marketing advice." I find the money that's already in your funnel—and show you exactly how to get it.</p>
 
             <div class="signature">
-                <p>To your revenue,</p>
-                <p class="name">Marisha Lakhiani</p>
-                <p class="title">Chief Growth Officer, Mindvalley</p>
-                <p class="title">$1B+ in Client Results | $150M Revenue Scaled</p>
-            </div>
-
-            <div class="ps-section">
-                <strong>P.S. — Still not sure? Here's the math:</strong>
-                <p>If you're spending $100k/month on ads at breakeven, and we help you improve your funnel by just 30% (which is conservative based on our track record), that's an extra $360k/year. And if we hit the kind of numbers Tiffany did? You're looking at $2-3M+ in found money. The question isn't whether you can afford an audit. It's whether you can afford NOT to do one.</p>
+                <p style="margin-bottom: 24px;">To your revenue,</p>
+                <div class="signature-name">Marisha Lakhiani</div>
+                <div class="signature-title">Chief Growth Officer, Mindvalley<br>$1B+ in Client Results | $150M Revenue Scaled</div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- PS Section -->
+    <section class="ps-section">
+        <div class="ps-content">
+            <p><strong>P.S.</strong> — If you're spending $100K/month on ads at breakeven and I help you improve your funnel by just 30%, that's an extra $360K/year. Most clients see 2-3X that. The question isn't whether you can afford an audit. It's whether you can afford to keep letting the money leak out.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Marisha Lakhiani. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
